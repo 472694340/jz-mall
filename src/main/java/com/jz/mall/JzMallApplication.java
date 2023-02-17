@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfigurat
  * 2.需要加上 (exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
  *
  */
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class, HibernateJpaAutoConfiguration.class})
+@SpringBootApplication
 public class JzMallApplication {
 
     public static void main(String[] args) {
