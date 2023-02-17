@@ -1,1 +1,1 @@
-# mall-own
+# jz-mall
