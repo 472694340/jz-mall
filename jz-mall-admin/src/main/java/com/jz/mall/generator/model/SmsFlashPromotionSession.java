@@ -1,85 +1,49 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 限时购场次表
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("sms_flash_promotion_session")
+@ApiModel(value = "SmsFlashPromotionSession对象", description = "限时购场次表")
 public class SmsFlashPromotionSession implements Serializable {
-    private Long id;
-
-    private String name;
-
-    private Date startTime;
-
-    private Date endTime;
-
-    private Integer status;
-
-    private Date createTime;
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
+    @ApiModelProperty("编号")
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ApiModelProperty("场次名称")
+    private String name;
 
-    public String getName() {
-        return name;
-    }
+    @ApiModelProperty("每日开始时间")
+    private Date startTime;
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    @ApiModelProperty("每日结束时间")
+    private Date endTime;
 
-    public Date getStartTime() {
-        return startTime;
-    }
+    @ApiModelProperty("启用状态：0->不启用；1->启用")
+    private Integer status;
 
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
+    @ApiModelProperty("创建时间")
+    private Date createTime;
 
-    public Date getEndTime() {
-        return endTime;
-    }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public Integer getStatus() {
-        return status;
-    }
-
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", startTime=").append(startTime);
-        sb.append(", endTime=").append(endTime);
-        sb.append(", status=").append(status);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

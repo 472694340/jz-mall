@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductAttributeCategory;
-import com.jz.mall.generator.model.PmsProductAttributeCategoryExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductAttributeCategoryMapper {
-    int countByExample(PmsProductAttributeCategoryExample example);
+/**
+ * <p>
+ * 产品属性分类表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductAttributeCategoryMapper extends BaseMapper<PmsProductAttributeCategory> {
 
-    int deleteByExample(PmsProductAttributeCategoryExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductAttributeCategory record);
-
-    int insertSelective(PmsProductAttributeCategory record);
-
-    List<PmsProductAttributeCategory> selectByExample(PmsProductAttributeCategoryExample example);
-
-    PmsProductAttributeCategory selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductAttributeCategory record, @Param("example") PmsProductAttributeCategoryExample example);
-
-    int updateByExample(@Param("record") PmsProductAttributeCategory record, @Param("example") PmsProductAttributeCategoryExample example);
-
-    int updateByPrimaryKeySelective(PmsProductAttributeCategory record);
-
-    int updateByPrimaryKey(PmsProductAttributeCategory record);
 }

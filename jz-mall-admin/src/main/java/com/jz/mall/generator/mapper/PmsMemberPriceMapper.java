@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsMemberPrice;
-import com.jz.mall.generator.model.PmsMemberPriceExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsMemberPriceMapper {
-    int countByExample(PmsMemberPriceExample example);
+/**
+ * <p>
+ * 商品会员价格表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsMemberPriceMapper extends BaseMapper<PmsMemberPrice> {
 
-    int deleteByExample(PmsMemberPriceExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsMemberPrice record);
-
-    int insertSelective(PmsMemberPrice record);
-
-    List<PmsMemberPrice> selectByExample(PmsMemberPriceExample example);
-
-    PmsMemberPrice selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsMemberPrice record, @Param("example") PmsMemberPriceExample example);
-
-    int updateByExample(@Param("record") PmsMemberPrice record, @Param("example") PmsMemberPriceExample example);
-
-    int updateByPrimaryKeySelective(PmsMemberPrice record);
-
-    int updateByPrimaryKey(PmsMemberPrice record);
 }

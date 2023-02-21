@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsCouponHistory;
-import com.jz.mall.generator.model.SmsCouponHistoryExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsCouponHistoryMapper {
-    int countByExample(SmsCouponHistoryExample example);
+/**
+ * <p>
+ * 优惠券使用、领取历史表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsCouponHistoryMapper extends BaseMapper<SmsCouponHistory> {
 
-    int deleteByExample(SmsCouponHistoryExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SmsCouponHistory record);
-
-    int insertSelective(SmsCouponHistory record);
-
-    List<SmsCouponHistory> selectByExample(SmsCouponHistoryExample example);
-
-    SmsCouponHistory selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SmsCouponHistory record, @Param("example") SmsCouponHistoryExample example);
-
-    int updateByExample(@Param("record") SmsCouponHistory record, @Param("example") SmsCouponHistoryExample example);
-
-    int updateByPrimaryKeySelective(SmsCouponHistory record);
-
-    int updateByPrimaryKey(SmsCouponHistory record);
 }

@@ -1,62 +1,40 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 产品属性分类表
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("pms_product_attribute_category")
+@ApiModel(value = "PmsProductAttributeCategory对象", description = "产品属性分类表")
 public class PmsProductAttributeCategory implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private String name;
 
+    @ApiModelProperty("属性数量")
     private Integer attributeCount;
 
+    @ApiModelProperty("参数数量")
     private Integer paramCount;
 
-    private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getAttributeCount() {
-        return attributeCount;
-    }
-
-    public void setAttributeCount(Integer attributeCount) {
-        this.attributeCount = attributeCount;
-    }
-
-    public Integer getParamCount() {
-        return paramCount;
-    }
-
-    public void setParamCount(Integer paramCount) {
-        this.paramCount = paramCount;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", name=").append(name);
-        sb.append(", attributeCount=").append(attributeCount);
-        sb.append(", paramCount=").append(paramCount);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

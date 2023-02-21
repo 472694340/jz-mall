@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsRolePermissionRelation;
-import com.jz.mall.generator.model.UmsRolePermissionRelationExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsRolePermissionRelationMapper {
-    int countByExample(UmsRolePermissionRelationExample example);
+/**
+ * <p>
+ * 后台用户角色和权限关系表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsRolePermissionRelationMapper extends BaseMapper<UmsRolePermissionRelation> {
 
-    int deleteByExample(UmsRolePermissionRelationExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsRolePermissionRelation record);
-
-    int insertSelective(UmsRolePermissionRelation record);
-
-    List<UmsRolePermissionRelation> selectByExample(UmsRolePermissionRelationExample example);
-
-    UmsRolePermissionRelation selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsRolePermissionRelation record, @Param("example") UmsRolePermissionRelationExample example);
-
-    int updateByExample(@Param("record") UmsRolePermissionRelation record, @Param("example") UmsRolePermissionRelationExample example);
-
-    int updateByPrimaryKeySelective(UmsRolePermissionRelation record);
-
-    int updateByPrimaryKey(UmsRolePermissionRelation record);
 }

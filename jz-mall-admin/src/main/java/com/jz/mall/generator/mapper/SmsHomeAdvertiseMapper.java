@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsHomeAdvertise;
-import com.jz.mall.generator.model.SmsHomeAdvertiseExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsHomeAdvertiseMapper {
-    int countByExample(SmsHomeAdvertiseExample example);
+/**
+ * <p>
+ * 首页轮播广告表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsHomeAdvertiseMapper extends BaseMapper<SmsHomeAdvertise> {
 
-    int deleteByExample(SmsHomeAdvertiseExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SmsHomeAdvertise record);
-
-    int insertSelective(SmsHomeAdvertise record);
-
-    List<SmsHomeAdvertise> selectByExample(SmsHomeAdvertiseExample example);
-
-    SmsHomeAdvertise selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SmsHomeAdvertise record, @Param("example") SmsHomeAdvertiseExample example);
-
-    int updateByExample(@Param("record") SmsHomeAdvertise record, @Param("example") SmsHomeAdvertiseExample example);
-
-    int updateByPrimaryKeySelective(SmsHomeAdvertise record);
-
-    int updateByPrimaryKey(SmsHomeAdvertise record);
 }

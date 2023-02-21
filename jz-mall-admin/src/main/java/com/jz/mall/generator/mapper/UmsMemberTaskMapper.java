@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMemberTask;
-import com.jz.mall.generator.model.UmsMemberTaskExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMemberTaskMapper {
-    int countByExample(UmsMemberTaskExample example);
+/**
+ * <p>
+ * 会员任务表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMemberTaskMapper extends BaseMapper<UmsMemberTask> {
 
-    int deleteByExample(UmsMemberTaskExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMemberTask record);
-
-    int insertSelective(UmsMemberTask record);
-
-    List<UmsMemberTask> selectByExample(UmsMemberTaskExample example);
-
-    UmsMemberTask selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMemberTask record, @Param("example") UmsMemberTaskExample example);
-
-    int updateByExample(@Param("record") UmsMemberTask record, @Param("example") UmsMemberTaskExample example);
-
-    int updateByPrimaryKeySelective(UmsMemberTask record);
-
-    int updateByPrimaryKey(UmsMemberTask record);
 }

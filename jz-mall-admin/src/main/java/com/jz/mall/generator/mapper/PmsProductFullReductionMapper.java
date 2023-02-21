@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductFullReduction;
-import com.jz.mall.generator.model.PmsProductFullReductionExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductFullReductionMapper {
-    int countByExample(PmsProductFullReductionExample example);
+/**
+ * <p>
+ * 产品满减表(只针对同商品) Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductFullReductionMapper extends BaseMapper<PmsProductFullReduction> {
 
-    int deleteByExample(PmsProductFullReductionExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductFullReduction record);
-
-    int insertSelective(PmsProductFullReduction record);
-
-    List<PmsProductFullReduction> selectByExample(PmsProductFullReductionExample example);
-
-    PmsProductFullReduction selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductFullReduction record, @Param("example") PmsProductFullReductionExample example);
-
-    int updateByExample(@Param("record") PmsProductFullReduction record, @Param("example") PmsProductFullReductionExample example);
-
-    int updateByPrimaryKeySelective(PmsProductFullReduction record);
-
-    int updateByPrimaryKey(PmsProductFullReduction record);
 }

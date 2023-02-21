@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsOrderReturnReason;
-import com.jz.mall.generator.model.OmsOrderReturnReasonExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsOrderReturnReasonMapper {
-    int countByExample(OmsOrderReturnReasonExample example);
+/**
+ * <p>
+ * 退货原因表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsOrderReturnReasonMapper extends BaseMapper<OmsOrderReturnReason> {
 
-    int deleteByExample(OmsOrderReturnReasonExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsOrderReturnReason record);
-
-    int insertSelective(OmsOrderReturnReason record);
-
-    List<OmsOrderReturnReason> selectByExample(OmsOrderReturnReasonExample example);
-
-    OmsOrderReturnReason selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsOrderReturnReason record, @Param("example") OmsOrderReturnReasonExample example);
-
-    int updateByExample(@Param("record") OmsOrderReturnReason record, @Param("example") OmsOrderReturnReasonExample example);
-
-    int updateByPrimaryKeySelective(OmsOrderReturnReason record);
-
-    int updateByPrimaryKey(OmsOrderReturnReason record);
 }

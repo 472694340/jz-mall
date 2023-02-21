@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsHomeNewProduct;
-import com.jz.mall.generator.model.SmsHomeNewProductExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsHomeNewProductMapper {
-    int countByExample(SmsHomeNewProductExample example);
+/**
+ * <p>
+ * 新鲜好物表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsHomeNewProductMapper extends BaseMapper<SmsHomeNewProduct> {
 
-    int deleteByExample(SmsHomeNewProductExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SmsHomeNewProduct record);
-
-    int insertSelective(SmsHomeNewProduct record);
-
-    List<SmsHomeNewProduct> selectByExample(SmsHomeNewProductExample example);
-
-    SmsHomeNewProduct selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SmsHomeNewProduct record, @Param("example") SmsHomeNewProductExample example);
-
-    int updateByExample(@Param("record") SmsHomeNewProduct record, @Param("example") SmsHomeNewProductExample example);
-
-    int updateByPrimaryKeySelective(SmsHomeNewProduct record);
-
-    int updateByPrimaryKey(SmsHomeNewProduct record);
 }

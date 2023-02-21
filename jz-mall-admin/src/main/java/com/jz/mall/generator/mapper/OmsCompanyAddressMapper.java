@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsCompanyAddress;
-import com.jz.mall.generator.model.OmsCompanyAddressExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsCompanyAddressMapper {
-    int countByExample(OmsCompanyAddressExample example);
+/**
+ * <p>
+ * 公司收发货地址表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsCompanyAddressMapper extends BaseMapper<OmsCompanyAddress> {
 
-    int deleteByExample(OmsCompanyAddressExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsCompanyAddress record);
-
-    int insertSelective(OmsCompanyAddress record);
-
-    List<OmsCompanyAddress> selectByExample(OmsCompanyAddressExample example);
-
-    OmsCompanyAddress selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsCompanyAddress record, @Param("example") OmsCompanyAddressExample example);
-
-    int updateByExample(@Param("record") OmsCompanyAddress record, @Param("example") OmsCompanyAddressExample example);
-
-    int updateByPrimaryKeySelective(OmsCompanyAddress record);
-
-    int updateByPrimaryKey(OmsCompanyAddress record);
 }

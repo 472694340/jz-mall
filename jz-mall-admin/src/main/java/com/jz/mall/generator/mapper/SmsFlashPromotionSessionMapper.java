@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsFlashPromotionSession;
-import com.jz.mall.generator.model.SmsFlashPromotionSessionExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsFlashPromotionSessionMapper {
-    int countByExample(SmsFlashPromotionSessionExample example);
+/**
+ * <p>
+ * 限时购场次表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsFlashPromotionSessionMapper extends BaseMapper<SmsFlashPromotionSession> {
 
-    int deleteByExample(SmsFlashPromotionSessionExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SmsFlashPromotionSession record);
-
-    int insertSelective(SmsFlashPromotionSession record);
-
-    List<SmsFlashPromotionSession> selectByExample(SmsFlashPromotionSessionExample example);
-
-    SmsFlashPromotionSession selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SmsFlashPromotionSession record, @Param("example") SmsFlashPromotionSessionExample example);
-
-    int updateByExample(@Param("record") SmsFlashPromotionSession record, @Param("example") SmsFlashPromotionSessionExample example);
-
-    int updateByPrimaryKeySelective(SmsFlashPromotionSession record);
-
-    int updateByPrimaryKey(SmsFlashPromotionSession record);
 }

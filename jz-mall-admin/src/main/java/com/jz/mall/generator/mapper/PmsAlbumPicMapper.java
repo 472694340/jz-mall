@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsAlbumPic;
-import com.jz.mall.generator.model.PmsAlbumPicExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsAlbumPicMapper {
-    int countByExample(PmsAlbumPicExample example);
+/**
+ * <p>
+ * 画册图片表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsAlbumPicMapper extends BaseMapper<PmsAlbumPic> {
 
-    int deleteByExample(PmsAlbumPicExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsAlbumPic record);
-
-    int insertSelective(PmsAlbumPic record);
-
-    List<PmsAlbumPic> selectByExample(PmsAlbumPicExample example);
-
-    PmsAlbumPic selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsAlbumPic record, @Param("example") PmsAlbumPicExample example);
-
-    int updateByExample(@Param("record") PmsAlbumPic record, @Param("example") PmsAlbumPicExample example);
-
-    int updateByPrimaryKeySelective(PmsAlbumPic record);
-
-    int updateByPrimaryKey(PmsAlbumPic record);
 }

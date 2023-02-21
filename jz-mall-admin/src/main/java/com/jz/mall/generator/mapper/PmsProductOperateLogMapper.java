@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductOperateLog;
-import com.jz.mall.generator.model.PmsProductOperateLogExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductOperateLogMapper {
-    int countByExample(PmsProductOperateLogExample example);
+/**
+ * <p>
+ *  Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductOperateLogMapper extends BaseMapper<PmsProductOperateLog> {
 
-    int deleteByExample(PmsProductOperateLogExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductOperateLog record);
-
-    int insertSelective(PmsProductOperateLog record);
-
-    List<PmsProductOperateLog> selectByExample(PmsProductOperateLogExample example);
-
-    PmsProductOperateLog selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductOperateLog record, @Param("example") PmsProductOperateLogExample example);
-
-    int updateByExample(@Param("record") PmsProductOperateLog record, @Param("example") PmsProductOperateLogExample example);
-
-    int updateByPrimaryKeySelective(PmsProductOperateLog record);
-
-    int updateByPrimaryKey(PmsProductOperateLog record);
 }

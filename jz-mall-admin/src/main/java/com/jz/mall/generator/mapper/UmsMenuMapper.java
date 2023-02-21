@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMenu;
-import com.jz.mall.generator.model.UmsMenuExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMenuMapper {
-    int countByExample(UmsMenuExample example);
+/**
+ * <p>
+ * 后台菜单表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMenuMapper extends BaseMapper<UmsMenu> {
 
-    int deleteByExample(UmsMenuExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMenu record);
-
-    int insertSelective(UmsMenu record);
-
-    List<UmsMenu> selectByExample(UmsMenuExample example);
-
-    UmsMenu selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMenu record, @Param("example") UmsMenuExample example);
-
-    int updateByExample(@Param("record") UmsMenu record, @Param("example") UmsMenuExample example);
-
-    int updateByPrimaryKeySelective(UmsMenu record);
-
-    int updateByPrimaryKey(UmsMenu record);
 }

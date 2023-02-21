@@ -1,85 +1,48 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 订单操作历史记录
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("oms_order_operate_history")
+@ApiModel(value = "OmsOrderOperateHistory对象", description = "订单操作历史记录")
 public class OmsOrderOperateHistory implements Serializable {
-    private Long id;
-
-    private Long orderId;
-
-    private String operateMan;
-
-    private Date createTime;
-
-    private Integer orderStatus;
-
-    private String note;
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ApiModelProperty("订单id")
+    private Long orderId;
 
-    public Long getOrderId() {
-        return orderId;
-    }
+    @ApiModelProperty("操作人：用户；系统；后台管理员")
+    private String operateMan;
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
+    @ApiModelProperty("操作时间")
+    private Date createTime;
 
-    public String getOperateMan() {
-        return operateMan;
-    }
+    @ApiModelProperty("订单状态：0->待付款；1->待发货；2->已发货；3->已完成；4->已关闭；5->无效订单")
+    private Integer orderStatus;
 
-    public void setOperateMan(String operateMan) {
-        this.operateMan = operateMan;
-    }
+    @ApiModelProperty("备注")
+    private String note;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Integer getOrderStatus() {
-        return orderStatus;
-    }
-
-    public void setOrderStatus(Integer orderStatus) {
-        this.orderStatus = orderStatus;
-    }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", orderId=").append(orderId);
-        sb.append(", operateMan=").append(operateMan);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", orderStatus=").append(orderStatus);
-        sb.append(", note=").append(note);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

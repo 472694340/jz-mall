@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsIntegrationConsumeSetting;
-import com.jz.mall.generator.model.UmsIntegrationConsumeSettingExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsIntegrationConsumeSettingMapper {
-    int countByExample(UmsIntegrationConsumeSettingExample example);
+/**
+ * <p>
+ * 积分消费设置 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsIntegrationConsumeSettingMapper extends BaseMapper<UmsIntegrationConsumeSetting> {
 
-    int deleteByExample(UmsIntegrationConsumeSettingExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsIntegrationConsumeSetting record);
-
-    int insertSelective(UmsIntegrationConsumeSetting record);
-
-    List<UmsIntegrationConsumeSetting> selectByExample(UmsIntegrationConsumeSettingExample example);
-
-    UmsIntegrationConsumeSetting selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsIntegrationConsumeSetting record, @Param("example") UmsIntegrationConsumeSettingExample example);
-
-    int updateByExample(@Param("record") UmsIntegrationConsumeSetting record, @Param("example") UmsIntegrationConsumeSettingExample example);
-
-    int updateByPrimaryKeySelective(UmsIntegrationConsumeSetting record);
-
-    int updateByPrimaryKey(UmsIntegrationConsumeSetting record);
 }

@@ -1,63 +1,42 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 资源分类表
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("ums_resource_category")
+@ApiModel(value = "UmsResourceCategory对象", description = "资源分类表")
 public class UmsResourceCategory implements Serializable {
-    private Long id;
-
-    private Date createTime;
-
-    private String name;
-
-    private Integer sort;
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ApiModelProperty("创建时间")
+    private Date createTime;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+    @ApiModelProperty("分类名称")
+    private String name;
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    @ApiModelProperty("排序")
+    private Integer sort;
 
-    public String getName() {
-        return name;
-    }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", name=").append(name);
-        sb.append(", sort=").append(sort);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

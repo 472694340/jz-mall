@@ -1,36 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsTopic;
-import com.jz.mall.generator.model.CmsTopicExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsTopicMapper {
-    int countByExample(CmsTopicExample example);
+/**
+ * <p>
+ * 话题表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsTopicMapper extends BaseMapper<CmsTopic> {
 
-    int deleteByExample(CmsTopicExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsTopic record);
-
-    int insertSelective(CmsTopic record);
-
-    List<CmsTopic> selectByExampleWithBLOBs(CmsTopicExample example);
-
-    List<CmsTopic> selectByExample(CmsTopicExample example);
-
-    CmsTopic selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsTopic record, @Param("example") CmsTopicExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") CmsTopic record, @Param("example") CmsTopicExample example);
-
-    int updateByExample(@Param("record") CmsTopic record, @Param("example") CmsTopicExample example);
-
-    int updateByPrimaryKeySelective(CmsTopic record);
-
-    int updateByPrimaryKeyWithBLOBs(CmsTopic record);
-
-    int updateByPrimaryKey(CmsTopic record);
 }

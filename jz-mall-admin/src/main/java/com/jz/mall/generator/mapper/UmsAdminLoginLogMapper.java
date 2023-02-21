@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsAdminLoginLog;
-import com.jz.mall.generator.model.UmsAdminLoginLogExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsAdminLoginLogMapper {
-    int countByExample(UmsAdminLoginLogExample example);
+/**
+ * <p>
+ * 后台用户登录日志表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsAdminLoginLogMapper extends BaseMapper<UmsAdminLoginLog> {
 
-    int deleteByExample(UmsAdminLoginLogExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsAdminLoginLog record);
-
-    int insertSelective(UmsAdminLoginLog record);
-
-    List<UmsAdminLoginLog> selectByExample(UmsAdminLoginLogExample example);
-
-    UmsAdminLoginLog selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsAdminLoginLog record, @Param("example") UmsAdminLoginLogExample example);
-
-    int updateByExample(@Param("record") UmsAdminLoginLog record, @Param("example") UmsAdminLoginLogExample example);
-
-    int updateByPrimaryKeySelective(UmsAdminLoginLog record);
-
-    int updateByPrimaryKey(UmsAdminLoginLog record);
 }

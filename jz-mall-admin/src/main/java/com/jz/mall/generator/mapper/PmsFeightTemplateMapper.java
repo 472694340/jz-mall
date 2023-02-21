@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsFeightTemplate;
-import com.jz.mall.generator.model.PmsFeightTemplateExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsFeightTemplateMapper {
-    int countByExample(PmsFeightTemplateExample example);
+/**
+ * <p>
+ * 运费模版 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsFeightTemplateMapper extends BaseMapper<PmsFeightTemplate> {
 
-    int deleteByExample(PmsFeightTemplateExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsFeightTemplate record);
-
-    int insertSelective(PmsFeightTemplate record);
-
-    List<PmsFeightTemplate> selectByExample(PmsFeightTemplateExample example);
-
-    PmsFeightTemplate selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsFeightTemplate record, @Param("example") PmsFeightTemplateExample example);
-
-    int updateByExample(@Param("record") PmsFeightTemplate record, @Param("example") PmsFeightTemplateExample example);
-
-    int updateByPrimaryKeySelective(PmsFeightTemplate record);
-
-    int updateByPrimaryKey(PmsFeightTemplate record);
 }

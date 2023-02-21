@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsPrefrenceAreaProductRelation;
-import com.jz.mall.generator.model.CmsPrefrenceAreaProductRelationExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsPrefrenceAreaProductRelationMapper {
-    int countByExample(CmsPrefrenceAreaProductRelationExample example);
+/**
+ * <p>
+ * 优选专区和产品关系表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsPrefrenceAreaProductRelationMapper extends BaseMapper<CmsPrefrenceAreaProductRelation> {
 
-    int deleteByExample(CmsPrefrenceAreaProductRelationExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsPrefrenceAreaProductRelation record);
-
-    int insertSelective(CmsPrefrenceAreaProductRelation record);
-
-    List<CmsPrefrenceAreaProductRelation> selectByExample(CmsPrefrenceAreaProductRelationExample example);
-
-    CmsPrefrenceAreaProductRelation selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsPrefrenceAreaProductRelation record, @Param("example") CmsPrefrenceAreaProductRelationExample example);
-
-    int updateByExample(@Param("record") CmsPrefrenceAreaProductRelation record, @Param("example") CmsPrefrenceAreaProductRelationExample example);
-
-    int updateByPrimaryKeySelective(CmsPrefrenceAreaProductRelation record);
-
-    int updateByPrimaryKey(CmsPrefrenceAreaProductRelation record);
 }

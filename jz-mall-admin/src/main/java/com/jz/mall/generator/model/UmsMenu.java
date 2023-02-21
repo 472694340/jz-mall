@@ -1,118 +1,57 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 后台菜单表
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("ums_menu")
+@ApiModel(value = "UmsMenu对象", description = "后台菜单表")
 public class UmsMenu implements Serializable {
-    private Long id;
-
-    private Long parentId;
-
-    private Date createTime;
-
-    private String title;
-
-    private Integer level;
-
-    private Integer sort;
-
-    private String name;
-
-    private String icon;
-
-    private Integer hidden;
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ApiModelProperty("父级ID")
+    private Long parentId;
 
-    public Long getParentId() {
-        return parentId;
-    }
+    @ApiModelProperty("创建时间")
+    private Date createTime;
 
-    public void setParentId(Long parentId) {
-        this.parentId = parentId;
-    }
+    @ApiModelProperty("菜单名称")
+    private String title;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+    @ApiModelProperty("菜单级数")
+    private Integer level;
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    @ApiModelProperty("菜单排序")
+    private Integer sort;
 
-    public String getTitle() {
-        return title;
-    }
+    @ApiModelProperty("前端名称")
+    private String name;
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
+    @ApiModelProperty("前端图标")
+    private String icon;
 
-    public Integer getLevel() {
-        return level;
-    }
+    @ApiModelProperty("前端隐藏")
+    private Integer hidden;
 
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
 
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public Integer getHidden() {
-        return hidden;
-    }
-
-    public void setHidden(Integer hidden) {
-        this.hidden = hidden;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", parentId=").append(parentId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", title=").append(title);
-        sb.append(", level=").append(level);
-        sb.append(", sort=").append(sort);
-        sb.append(", name=").append(name);
-        sb.append(", icon=").append(icon);
-        sb.append(", hidden=").append(hidden);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

@@ -1,36 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductCategory;
-import com.jz.mall.generator.model.PmsProductCategoryExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductCategoryMapper {
-    int countByExample(PmsProductCategoryExample example);
+/**
+ * <p>
+ * 产品分类 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductCategoryMapper extends BaseMapper<PmsProductCategory> {
 
-    int deleteByExample(PmsProductCategoryExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductCategory record);
-
-    int insertSelective(PmsProductCategory record);
-
-    List<PmsProductCategory> selectByExampleWithBLOBs(PmsProductCategoryExample example);
-
-    List<PmsProductCategory> selectByExample(PmsProductCategoryExample example);
-
-    PmsProductCategory selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductCategory record, @Param("example") PmsProductCategoryExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") PmsProductCategory record, @Param("example") PmsProductCategoryExample example);
-
-    int updateByExample(@Param("record") PmsProductCategory record, @Param("example") PmsProductCategoryExample example);
-
-    int updateByPrimaryKeySelective(PmsProductCategory record);
-
-    int updateByPrimaryKeyWithBLOBs(PmsProductCategory record);
-
-    int updateByPrimaryKey(PmsProductCategory record);
 }

@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsTopicComment;
-import com.jz.mall.generator.model.CmsTopicCommentExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsTopicCommentMapper {
-    int countByExample(CmsTopicCommentExample example);
+/**
+ * <p>
+ * 专题评论表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsTopicCommentMapper extends BaseMapper<CmsTopicComment> {
 
-    int deleteByExample(CmsTopicCommentExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsTopicComment record);
-
-    int insertSelective(CmsTopicComment record);
-
-    List<CmsTopicComment> selectByExample(CmsTopicCommentExample example);
-
-    CmsTopicComment selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsTopicComment record, @Param("example") CmsTopicCommentExample example);
-
-    int updateByExample(@Param("record") CmsTopicComment record, @Param("example") CmsTopicCommentExample example);
-
-    int updateByPrimaryKeySelective(CmsTopicComment record);
-
-    int updateByPrimaryKey(CmsTopicComment record);
 }

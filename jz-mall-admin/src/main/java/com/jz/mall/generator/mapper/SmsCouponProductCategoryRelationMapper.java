@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsCouponProductCategoryRelation;
-import com.jz.mall.generator.model.SmsCouponProductCategoryRelationExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsCouponProductCategoryRelationMapper {
-    int countByExample(SmsCouponProductCategoryRelationExample example);
+/**
+ * <p>
+ * 优惠券和产品分类关系表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsCouponProductCategoryRelationMapper extends BaseMapper<SmsCouponProductCategoryRelation> {
 
-    int deleteByExample(SmsCouponProductCategoryRelationExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(SmsCouponProductCategoryRelation record);
-
-    int insertSelective(SmsCouponProductCategoryRelation record);
-
-    List<SmsCouponProductCategoryRelation> selectByExample(SmsCouponProductCategoryRelationExample example);
-
-    SmsCouponProductCategoryRelation selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") SmsCouponProductCategoryRelation record, @Param("example") SmsCouponProductCategoryRelationExample example);
-
-    int updateByExample(@Param("record") SmsCouponProductCategoryRelation record, @Param("example") SmsCouponProductCategoryRelationExample example);
-
-    int updateByPrimaryKeySelective(SmsCouponProductCategoryRelation record);
-
-    int updateByPrimaryKey(SmsCouponProductCategoryRelation record);
 }

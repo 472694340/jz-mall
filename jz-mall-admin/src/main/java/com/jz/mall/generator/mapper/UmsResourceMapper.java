@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsResource;
-import com.jz.mall.generator.model.UmsResourceExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsResourceMapper {
-    int countByExample(UmsResourceExample example);
+/**
+ * <p>
+ * 后台资源表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsResourceMapper extends BaseMapper<UmsResource> {
 
-    int deleteByExample(UmsResourceExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsResource record);
-
-    int insertSelective(UmsResource record);
-
-    List<UmsResource> selectByExample(UmsResourceExample example);
-
-    UmsResource selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsResource record, @Param("example") UmsResourceExample example);
-
-    int updateByExample(@Param("record") UmsResource record, @Param("example") UmsResourceExample example);
-
-    int updateByPrimaryKeySelective(UmsResource record);
-
-    int updateByPrimaryKey(UmsResource record);
 }

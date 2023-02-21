@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMemberReceiveAddress;
-import com.jz.mall.generator.model.UmsMemberReceiveAddressExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMemberReceiveAddressMapper {
-    int countByExample(UmsMemberReceiveAddressExample example);
+/**
+ * <p>
+ * 会员收货地址表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMemberReceiveAddressMapper extends BaseMapper<UmsMemberReceiveAddress> {
 
-    int deleteByExample(UmsMemberReceiveAddressExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMemberReceiveAddress record);
-
-    int insertSelective(UmsMemberReceiveAddress record);
-
-    List<UmsMemberReceiveAddress> selectByExample(UmsMemberReceiveAddressExample example);
-
-    UmsMemberReceiveAddress selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMemberReceiveAddress record, @Param("example") UmsMemberReceiveAddressExample example);
-
-    int updateByExample(@Param("record") UmsMemberReceiveAddress record, @Param("example") UmsMemberReceiveAddressExample example);
-
-    int updateByPrimaryKeySelective(UmsMemberReceiveAddress record);
-
-    int updateByPrimaryKey(UmsMemberReceiveAddress record);
 }

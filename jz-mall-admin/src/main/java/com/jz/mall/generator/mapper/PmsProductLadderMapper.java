@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductLadder;
-import com.jz.mall.generator.model.PmsProductLadderExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductLadderMapper {
-    int countByExample(PmsProductLadderExample example);
+/**
+ * <p>
+ * 产品阶梯价格表(只针对同商品) Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductLadderMapper extends BaseMapper<PmsProductLadder> {
 
-    int deleteByExample(PmsProductLadderExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductLadder record);
-
-    int insertSelective(PmsProductLadder record);
-
-    List<PmsProductLadder> selectByExample(PmsProductLadderExample example);
-
-    PmsProductLadder selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductLadder record, @Param("example") PmsProductLadderExample example);
-
-    int updateByExample(@Param("record") PmsProductLadder record, @Param("example") PmsProductLadderExample example);
-
-    int updateByPrimaryKeySelective(PmsProductLadder record);
-
-    int updateByPrimaryKey(PmsProductLadder record);
 }

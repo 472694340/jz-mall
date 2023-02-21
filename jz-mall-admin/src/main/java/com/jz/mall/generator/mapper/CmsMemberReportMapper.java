@@ -1,22 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsMemberReport;
-import com.jz.mall.generator.model.CmsMemberReportExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsMemberReportMapper {
-    int countByExample(CmsMemberReportExample example);
+/**
+ * <p>
+ * 用户举报表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsMemberReportMapper extends BaseMapper<CmsMemberReport> {
 
-    int deleteByExample(CmsMemberReportExample example);
-
-    int insert(CmsMemberReport record);
-
-    int insertSelective(CmsMemberReport record);
-
-    List<CmsMemberReport> selectByExample(CmsMemberReportExample example);
-
-    int updateByExampleSelective(@Param("record") CmsMemberReport record, @Param("example") CmsMemberReportExample example);
-
-    int updateByExample(@Param("record") CmsMemberReport record, @Param("example") CmsMemberReportExample example);
 }

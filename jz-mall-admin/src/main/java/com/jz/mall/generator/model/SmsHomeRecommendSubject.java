@@ -1,8 +1,31 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 首页推荐专题表
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("sms_home_recommend_subject")
+@ApiModel(value = "SmsHomeRecommendSubject对象", description = "首页推荐专题表")
 public class SmsHomeRecommendSubject implements Serializable {
+
+    private static final long serialVersionUID = 1L;
+
+    @TableId(value = "id", type = IdType.AUTO)
     private Long id;
 
     private Long subjectId;
@@ -13,61 +36,5 @@ public class SmsHomeRecommendSubject implements Serializable {
 
     private Integer sort;
 
-    private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(Long subjectId) {
-        this.subjectId = subjectId;
-    }
-
-    public String getSubjectName() {
-        return subjectName;
-    }
-
-    public void setSubjectName(String subjectName) {
-        this.subjectName = subjectName;
-    }
-
-    public Integer getRecommendStatus() {
-        return recommendStatus;
-    }
-
-    public void setRecommendStatus(Integer recommendStatus) {
-        this.recommendStatus = recommendStatus;
-    }
-
-    public Integer getSort() {
-        return sort;
-    }
-
-    public void setSort(Integer sort) {
-        this.sort = sort;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", subjectId=").append(subjectId);
-        sb.append(", subjectName=").append(subjectName);
-        sb.append(", recommendStatus=").append(recommendStatus);
-        sb.append(", sort=").append(sort);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

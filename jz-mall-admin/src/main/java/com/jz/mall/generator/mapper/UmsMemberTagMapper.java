@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMemberTag;
-import com.jz.mall.generator.model.UmsMemberTagExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMemberTagMapper {
-    int countByExample(UmsMemberTagExample example);
+/**
+ * <p>
+ * 用户标签表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMemberTagMapper extends BaseMapper<UmsMemberTag> {
 
-    int deleteByExample(UmsMemberTagExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMemberTag record);
-
-    int insertSelective(UmsMemberTag record);
-
-    List<UmsMemberTag> selectByExample(UmsMemberTagExample example);
-
-    UmsMemberTag selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMemberTag record, @Param("example") UmsMemberTagExample example);
-
-    int updateByExample(@Param("record") UmsMemberTag record, @Param("example") UmsMemberTagExample example);
-
-    int updateByPrimaryKeySelective(UmsMemberTag record);
-
-    int updateByPrimaryKey(UmsMemberTag record);
 }

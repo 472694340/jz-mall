@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsOrderOperateHistory;
-import com.jz.mall.generator.model.OmsOrderOperateHistoryExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsOrderOperateHistoryMapper {
-    int countByExample(OmsOrderOperateHistoryExample example);
+/**
+ * <p>
+ * 订单操作历史记录 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsOrderOperateHistoryMapper extends BaseMapper<OmsOrderOperateHistory> {
 
-    int deleteByExample(OmsOrderOperateHistoryExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsOrderOperateHistory record);
-
-    int insertSelective(OmsOrderOperateHistory record);
-
-    List<OmsOrderOperateHistory> selectByExample(OmsOrderOperateHistoryExample example);
-
-    OmsOrderOperateHistory selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsOrderOperateHistory record, @Param("example") OmsOrderOperateHistoryExample example);
-
-    int updateByExample(@Param("record") OmsOrderOperateHistory record, @Param("example") OmsOrderOperateHistoryExample example);
-
-    int updateByPrimaryKeySelective(OmsOrderOperateHistory record);
-
-    int updateByPrimaryKey(OmsOrderOperateHistory record);
 }

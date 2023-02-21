@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsOrderSetting;
-import com.jz.mall.generator.model.OmsOrderSettingExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsOrderSettingMapper {
-    int countByExample(OmsOrderSettingExample example);
+/**
+ * <p>
+ * 订单设置表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsOrderSettingMapper extends BaseMapper<OmsOrderSetting> {
 
-    int deleteByExample(OmsOrderSettingExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsOrderSetting record);
-
-    int insertSelective(OmsOrderSetting record);
-
-    List<OmsOrderSetting> selectByExample(OmsOrderSettingExample example);
-
-    OmsOrderSetting selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsOrderSetting record, @Param("example") OmsOrderSettingExample example);
-
-    int updateByExample(@Param("record") OmsOrderSetting record, @Param("example") OmsOrderSettingExample example);
-
-    int updateByPrimaryKeySelective(OmsOrderSetting record);
-
-    int updateByPrimaryKey(OmsOrderSetting record);
 }

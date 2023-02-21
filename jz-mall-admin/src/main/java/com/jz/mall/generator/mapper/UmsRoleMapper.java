@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsRole;
-import com.jz.mall.generator.model.UmsRoleExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsRoleMapper {
-    int countByExample(UmsRoleExample example);
+/**
+ * <p>
+ * 后台用户角色表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsRoleMapper extends BaseMapper<UmsRole> {
 
-    int deleteByExample(UmsRoleExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsRole record);
-
-    int insertSelective(UmsRole record);
-
-    List<UmsRole> selectByExample(UmsRoleExample example);
-
-    UmsRole selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsRole record, @Param("example") UmsRoleExample example);
-
-    int updateByExample(@Param("record") UmsRole record, @Param("example") UmsRoleExample example);
-
-    int updateByPrimaryKeySelective(UmsRole record);
-
-    int updateByPrimaryKey(UmsRole record);
 }

@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMemberProductCategoryRelation;
-import com.jz.mall.generator.model.UmsMemberProductCategoryRelationExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMemberProductCategoryRelationMapper {
-    int countByExample(UmsMemberProductCategoryRelationExample example);
+/**
+ * <p>
+ * 会员与产品分类关系表（用户喜欢的分类） Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMemberProductCategoryRelationMapper extends BaseMapper<UmsMemberProductCategoryRelation> {
 
-    int deleteByExample(UmsMemberProductCategoryRelationExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMemberProductCategoryRelation record);
-
-    int insertSelective(UmsMemberProductCategoryRelation record);
-
-    List<UmsMemberProductCategoryRelation> selectByExample(UmsMemberProductCategoryRelationExample example);
-
-    UmsMemberProductCategoryRelation selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMemberProductCategoryRelation record, @Param("example") UmsMemberProductCategoryRelationExample example);
-
-    int updateByExample(@Param("record") UmsMemberProductCategoryRelation record, @Param("example") UmsMemberProductCategoryRelationExample example);
-
-    int updateByPrimaryKeySelective(UmsMemberProductCategoryRelation record);
-
-    int updateByPrimaryKey(UmsMemberProductCategoryRelation record);
 }

@@ -1,36 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsPrefrenceArea;
-import com.jz.mall.generator.model.CmsPrefrenceAreaExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsPrefrenceAreaMapper {
-    int countByExample(CmsPrefrenceAreaExample example);
+/**
+ * <p>
+ * 优选专区 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsPrefrenceAreaMapper extends BaseMapper<CmsPrefrenceArea> {
 
-    int deleteByExample(CmsPrefrenceAreaExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsPrefrenceArea record);
-
-    int insertSelective(CmsPrefrenceArea record);
-
-    List<CmsPrefrenceArea> selectByExampleWithBLOBs(CmsPrefrenceAreaExample example);
-
-    List<CmsPrefrenceArea> selectByExample(CmsPrefrenceAreaExample example);
-
-    CmsPrefrenceArea selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
-
-    int updateByExample(@Param("record") CmsPrefrenceArea record, @Param("example") CmsPrefrenceAreaExample example);
-
-    int updateByPrimaryKeySelective(CmsPrefrenceArea record);
-
-    int updateByPrimaryKeyWithBLOBs(CmsPrefrenceArea record);
-
-    int updateByPrimaryKey(CmsPrefrenceArea record);
 }

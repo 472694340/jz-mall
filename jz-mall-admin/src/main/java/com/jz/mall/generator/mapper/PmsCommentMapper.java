@@ -1,36 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsComment;
-import com.jz.mall.generator.model.PmsCommentExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsCommentMapper {
-    int countByExample(PmsCommentExample example);
+/**
+ * <p>
+ * 商品评价表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsCommentMapper extends BaseMapper<PmsComment> {
 
-    int deleteByExample(PmsCommentExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsComment record);
-
-    int insertSelective(PmsComment record);
-
-    List<PmsComment> selectByExampleWithBLOBs(PmsCommentExample example);
-
-    List<PmsComment> selectByExample(PmsCommentExample example);
-
-    PmsComment selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsComment record, @Param("example") PmsCommentExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") PmsComment record, @Param("example") PmsCommentExample example);
-
-    int updateByExample(@Param("record") PmsComment record, @Param("example") PmsCommentExample example);
-
-    int updateByPrimaryKeySelective(PmsComment record);
-
-    int updateByPrimaryKeyWithBLOBs(PmsComment record);
-
-    int updateByPrimaryKey(PmsComment record);
 }

@@ -1,36 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsHelp;
-import com.jz.mall.generator.model.CmsHelpExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsHelpMapper {
-    int countByExample(CmsHelpExample example);
+/**
+ * <p>
+ * 帮助表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsHelpMapper extends BaseMapper<CmsHelp> {
 
-    int deleteByExample(CmsHelpExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsHelp record);
-
-    int insertSelective(CmsHelp record);
-
-    List<CmsHelp> selectByExampleWithBLOBs(CmsHelpExample example);
-
-    List<CmsHelp> selectByExample(CmsHelpExample example);
-
-    CmsHelp selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsHelp record, @Param("example") CmsHelpExample example);
-
-    int updateByExampleWithBLOBs(@Param("record") CmsHelp record, @Param("example") CmsHelpExample example);
-
-    int updateByExample(@Param("record") CmsHelp record, @Param("example") CmsHelpExample example);
-
-    int updateByPrimaryKeySelective(CmsHelp record);
-
-    int updateByPrimaryKeyWithBLOBs(CmsHelp record);
-
-    int updateByPrimaryKey(CmsHelp record);
 }

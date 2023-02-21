@@ -1,317 +1,112 @@
 package com.jz.mall.generator.model;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Getter;
+import lombok.Setter;
 
+/**
+ * <p>
+ * 订单退货申请
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+@Getter
+@Setter
+@TableName("oms_order_return_apply")
+@ApiModel(value = "OmsOrderReturnApply对象", description = "订单退货申请")
 public class OmsOrderReturnApply implements Serializable {
-    private Long id;
-
-    private Long orderId;
-
-    private Long companyAddressId;
-
-    private Long productId;
-
-    private String orderSn;
-
-    private Date createTime;
-
-    private String memberUsername;
-
-    private BigDecimal returnAmount;
-
-    private String returnName;
-
-    private String returnPhone;
-
-    private Integer status;
-
-    private Date handleTime;
-
-    private String productPic;
-
-    private String productName;
-
-    private String productBrand;
-
-    private String productAttr;
-
-    private Integer productCount;
-
-    private BigDecimal productPrice;
-
-    private BigDecimal productRealPrice;
-
-    private String reason;
-
-    private String description;
-
-    private String proofPics;
-
-    private String handleNote;
-
-    private String handleMan;
-
-    private String receiveMan;
-
-    private Date receiveTime;
-
-    private String receiveNote;
 
     private static final long serialVersionUID = 1L;
 
-    public Long getId() {
-        return id;
-    }
+    @TableId(value = "id", type = IdType.AUTO)
+    private Long id;
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @ApiModelProperty("订单id")
+    private Long orderId;
 
-    public Long getOrderId() {
-        return orderId;
-    }
+    @ApiModelProperty("收货地址表id")
+    private Long companyAddressId;
 
-    public void setOrderId(Long orderId) {
-        this.orderId = orderId;
-    }
+    @ApiModelProperty("退货商品id")
+    private Long productId;
 
-    public Long getCompanyAddressId() {
-        return companyAddressId;
-    }
+    @ApiModelProperty("订单编号")
+    private String orderSn;
 
-    public void setCompanyAddressId(Long companyAddressId) {
-        this.companyAddressId = companyAddressId;
-    }
+    @ApiModelProperty("申请时间")
+    private Date createTime;
 
-    public Long getProductId() {
-        return productId;
-    }
+    @ApiModelProperty("会员用户名")
+    private String memberUsername;
 
-    public void setProductId(Long productId) {
-        this.productId = productId;
-    }
+    @ApiModelProperty("退款金额")
+    private BigDecimal returnAmount;
 
-    public String getOrderSn() {
-        return orderSn;
-    }
+    @ApiModelProperty("退货人姓名")
+    private String returnName;
 
-    public void setOrderSn(String orderSn) {
-        this.orderSn = orderSn;
-    }
+    @ApiModelProperty("退货人电话")
+    private String returnPhone;
 
-    public Date getCreateTime() {
-        return createTime;
-    }
+    @ApiModelProperty("申请状态：0->待处理；1->退货中；2->已完成；3->已拒绝")
+    private Integer status;
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
+    @ApiModelProperty("处理时间")
+    private Date handleTime;
 
-    public String getMemberUsername() {
-        return memberUsername;
-    }
+    @ApiModelProperty("商品图片")
+    private String productPic;
 
-    public void setMemberUsername(String memberUsername) {
-        this.memberUsername = memberUsername;
-    }
+    @ApiModelProperty("商品名称")
+    private String productName;
 
-    public BigDecimal getReturnAmount() {
-        return returnAmount;
-    }
+    @ApiModelProperty("商品品牌")
+    private String productBrand;
 
-    public void setReturnAmount(BigDecimal returnAmount) {
-        this.returnAmount = returnAmount;
-    }
+    @ApiModelProperty("商品销售属性：颜色：红色；尺码：xl;")
+    private String productAttr;
 
-    public String getReturnName() {
-        return returnName;
-    }
+    @ApiModelProperty("退货数量")
+    private Integer productCount;
 
-    public void setReturnName(String returnName) {
-        this.returnName = returnName;
-    }
+    @ApiModelProperty("商品单价")
+    private BigDecimal productPrice;
 
-    public String getReturnPhone() {
-        return returnPhone;
-    }
+    @ApiModelProperty("商品实际支付单价")
+    private BigDecimal productRealPrice;
 
-    public void setReturnPhone(String returnPhone) {
-        this.returnPhone = returnPhone;
-    }
+    @ApiModelProperty("原因")
+    private String reason;
 
-    public Integer getStatus() {
-        return status;
-    }
+    @ApiModelProperty("描述")
+    private String description;
 
-    public void setStatus(Integer status) {
-        this.status = status;
-    }
+    @ApiModelProperty("凭证图片，以逗号隔开")
+    private String proofPics;
 
-    public Date getHandleTime() {
-        return handleTime;
-    }
+    @ApiModelProperty("处理备注")
+    private String handleNote;
 
-    public void setHandleTime(Date handleTime) {
-        this.handleTime = handleTime;
-    }
+    @ApiModelProperty("处理人员")
+    private String handleMan;
 
-    public String getProductPic() {
-        return productPic;
-    }
+    @ApiModelProperty("收货人")
+    private String receiveMan;
 
-    public void setProductPic(String productPic) {
-        this.productPic = productPic;
-    }
+    @ApiModelProperty("收货时间")
+    private Date receiveTime;
 
-    public String getProductName() {
-        return productName;
-    }
+    @ApiModelProperty("收货备注")
+    private String receiveNote;
 
-    public void setProductName(String productName) {
-        this.productName = productName;
-    }
 
-    public String getProductBrand() {
-        return productBrand;
-    }
-
-    public void setProductBrand(String productBrand) {
-        this.productBrand = productBrand;
-    }
-
-    public String getProductAttr() {
-        return productAttr;
-    }
-
-    public void setProductAttr(String productAttr) {
-        this.productAttr = productAttr;
-    }
-
-    public Integer getProductCount() {
-        return productCount;
-    }
-
-    public void setProductCount(Integer productCount) {
-        this.productCount = productCount;
-    }
-
-    public BigDecimal getProductPrice() {
-        return productPrice;
-    }
-
-    public void setProductPrice(BigDecimal productPrice) {
-        this.productPrice = productPrice;
-    }
-
-    public BigDecimal getProductRealPrice() {
-        return productRealPrice;
-    }
-
-    public void setProductRealPrice(BigDecimal productRealPrice) {
-        this.productRealPrice = productRealPrice;
-    }
-
-    public String getReason() {
-        return reason;
-    }
-
-    public void setReason(String reason) {
-        this.reason = reason;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getProofPics() {
-        return proofPics;
-    }
-
-    public void setProofPics(String proofPics) {
-        this.proofPics = proofPics;
-    }
-
-    public String getHandleNote() {
-        return handleNote;
-    }
-
-    public void setHandleNote(String handleNote) {
-        this.handleNote = handleNote;
-    }
-
-    public String getHandleMan() {
-        return handleMan;
-    }
-
-    public void setHandleMan(String handleMan) {
-        this.handleMan = handleMan;
-    }
-
-    public String getReceiveMan() {
-        return receiveMan;
-    }
-
-    public void setReceiveMan(String receiveMan) {
-        this.receiveMan = receiveMan;
-    }
-
-    public Date getReceiveTime() {
-        return receiveTime;
-    }
-
-    public void setReceiveTime(Date receiveTime) {
-        this.receiveTime = receiveTime;
-    }
-
-    public String getReceiveNote() {
-        return receiveNote;
-    }
-
-    public void setReceiveNote(String receiveNote) {
-        this.receiveNote = receiveNote;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", orderId=").append(orderId);
-        sb.append(", companyAddressId=").append(companyAddressId);
-        sb.append(", productId=").append(productId);
-        sb.append(", orderSn=").append(orderSn);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", memberUsername=").append(memberUsername);
-        sb.append(", returnAmount=").append(returnAmount);
-        sb.append(", returnName=").append(returnName);
-        sb.append(", returnPhone=").append(returnPhone);
-        sb.append(", status=").append(status);
-        sb.append(", handleTime=").append(handleTime);
-        sb.append(", productPic=").append(productPic);
-        sb.append(", productName=").append(productName);
-        sb.append(", productBrand=").append(productBrand);
-        sb.append(", productAttr=").append(productAttr);
-        sb.append(", productCount=").append(productCount);
-        sb.append(", productPrice=").append(productPrice);
-        sb.append(", productRealPrice=").append(productRealPrice);
-        sb.append(", reason=").append(reason);
-        sb.append(", description=").append(description);
-        sb.append(", proofPics=").append(proofPics);
-        sb.append(", handleNote=").append(handleNote);
-        sb.append(", handleMan=").append(handleMan);
-        sb.append(", receiveMan=").append(receiveMan);
-        sb.append(", receiveTime=").append(receiveTime);
-        sb.append(", receiveNote=").append(receiveNote);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
-    }
 }

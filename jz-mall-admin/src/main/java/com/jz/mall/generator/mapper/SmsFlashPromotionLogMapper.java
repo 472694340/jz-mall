@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.SmsFlashPromotionLog;
-import com.jz.mall.generator.model.SmsFlashPromotionLogExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface SmsFlashPromotionLogMapper {
-    int countByExample(SmsFlashPromotionLogExample example);
+/**
+ * <p>
+ * 限时购通知记录 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface SmsFlashPromotionLogMapper extends BaseMapper<SmsFlashPromotionLog> {
 
-    int deleteByExample(SmsFlashPromotionLogExample example);
-
-    int deleteByPrimaryKey(Integer id);
-
-    int insert(SmsFlashPromotionLog record);
-
-    int insertSelective(SmsFlashPromotionLog record);
-
-    List<SmsFlashPromotionLog> selectByExample(SmsFlashPromotionLogExample example);
-
-    SmsFlashPromotionLog selectByPrimaryKey(Integer id);
-
-    int updateByExampleSelective(@Param("record") SmsFlashPromotionLog record, @Param("example") SmsFlashPromotionLogExample example);
-
-    int updateByExample(@Param("record") SmsFlashPromotionLog record, @Param("example") SmsFlashPromotionLogExample example);
-
-    int updateByPrimaryKeySelective(SmsFlashPromotionLog record);
-
-    int updateByPrimaryKey(SmsFlashPromotionLog record);
 }

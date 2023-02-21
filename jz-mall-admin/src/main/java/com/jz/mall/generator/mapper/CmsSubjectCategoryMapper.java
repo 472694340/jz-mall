@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.CmsSubjectCategory;
-import com.jz.mall.generator.model.CmsSubjectCategoryExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface CmsSubjectCategoryMapper {
-    int countByExample(CmsSubjectCategoryExample example);
+/**
+ * <p>
+ * 专题分类表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface CmsSubjectCategoryMapper extends BaseMapper<CmsSubjectCategory> {
 
-    int deleteByExample(CmsSubjectCategoryExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(CmsSubjectCategory record);
-
-    int insertSelective(CmsSubjectCategory record);
-
-    List<CmsSubjectCategory> selectByExample(CmsSubjectCategoryExample example);
-
-    CmsSubjectCategory selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") CmsSubjectCategory record, @Param("example") CmsSubjectCategoryExample example);
-
-    int updateByExample(@Param("record") CmsSubjectCategory record, @Param("example") CmsSubjectCategoryExample example);
-
-    int updateByPrimaryKeySelective(CmsSubjectCategory record);
-
-    int updateByPrimaryKey(CmsSubjectCategory record);
 }

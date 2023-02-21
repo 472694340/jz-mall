@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsMemberLevel;
-import com.jz.mall.generator.model.UmsMemberLevelExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsMemberLevelMapper {
-    int countByExample(UmsMemberLevelExample example);
+/**
+ * <p>
+ * 会员等级表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsMemberLevelMapper extends BaseMapper<UmsMemberLevel> {
 
-    int deleteByExample(UmsMemberLevelExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsMemberLevel record);
-
-    int insertSelective(UmsMemberLevel record);
-
-    List<UmsMemberLevel> selectByExample(UmsMemberLevelExample example);
-
-    UmsMemberLevel selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsMemberLevel record, @Param("example") UmsMemberLevelExample example);
-
-    int updateByExample(@Param("record") UmsMemberLevel record, @Param("example") UmsMemberLevelExample example);
-
-    int updateByPrimaryKeySelective(UmsMemberLevel record);
-
-    int updateByPrimaryKey(UmsMemberLevel record);
 }

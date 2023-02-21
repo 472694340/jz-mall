@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsSkuStock;
-import com.jz.mall.generator.model.PmsSkuStockExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsSkuStockMapper {
-    int countByExample(PmsSkuStockExample example);
+/**
+ * <p>
+ * sku的库存 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsSkuStockMapper extends BaseMapper<PmsSkuStock> {
 
-    int deleteByExample(PmsSkuStockExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsSkuStock record);
-
-    int insertSelective(PmsSkuStock record);
-
-    List<PmsSkuStock> selectByExample(PmsSkuStockExample example);
-
-    PmsSkuStock selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsSkuStock record, @Param("example") PmsSkuStockExample example);
-
-    int updateByExample(@Param("record") PmsSkuStock record, @Param("example") PmsSkuStockExample example);
-
-    int updateByPrimaryKeySelective(PmsSkuStock record);
-
-    int updateByPrimaryKey(PmsSkuStock record);
 }

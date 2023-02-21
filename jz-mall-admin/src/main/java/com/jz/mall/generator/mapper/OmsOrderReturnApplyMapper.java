@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsOrderReturnApply;
-import com.jz.mall.generator.model.OmsOrderReturnApplyExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsOrderReturnApplyMapper {
-    int countByExample(OmsOrderReturnApplyExample example);
+/**
+ * <p>
+ * 订单退货申请 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsOrderReturnApplyMapper extends BaseMapper<OmsOrderReturnApply> {
 
-    int deleteByExample(OmsOrderReturnApplyExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsOrderReturnApply record);
-
-    int insertSelective(OmsOrderReturnApply record);
-
-    List<OmsOrderReturnApply> selectByExample(OmsOrderReturnApplyExample example);
-
-    OmsOrderReturnApply selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsOrderReturnApply record, @Param("example") OmsOrderReturnApplyExample example);
-
-    int updateByExample(@Param("record") OmsOrderReturnApply record, @Param("example") OmsOrderReturnApplyExample example);
-
-    int updateByPrimaryKeySelective(OmsOrderReturnApply record);
-
-    int updateByPrimaryKey(OmsOrderReturnApply record);
 }

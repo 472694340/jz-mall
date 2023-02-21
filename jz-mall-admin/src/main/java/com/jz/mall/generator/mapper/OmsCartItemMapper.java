@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.OmsCartItem;
-import com.jz.mall.generator.model.OmsCartItemExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface OmsCartItemMapper {
-    int countByExample(OmsCartItemExample example);
+/**
+ * <p>
+ * 购物车表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface OmsCartItemMapper extends BaseMapper<OmsCartItem> {
 
-    int deleteByExample(OmsCartItemExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(OmsCartItem record);
-
-    int insertSelective(OmsCartItem record);
-
-    List<OmsCartItem> selectByExample(OmsCartItemExample example);
-
-    OmsCartItem selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") OmsCartItem record, @Param("example") OmsCartItemExample example);
-
-    int updateByExample(@Param("record") OmsCartItem record, @Param("example") OmsCartItemExample example);
-
-    int updateByPrimaryKeySelective(OmsCartItem record);
-
-    int updateByPrimaryKey(OmsCartItem record);
 }

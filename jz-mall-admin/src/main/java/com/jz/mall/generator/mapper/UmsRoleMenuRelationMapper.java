@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.UmsRoleMenuRelation;
-import com.jz.mall.generator.model.UmsRoleMenuRelationExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface UmsRoleMenuRelationMapper {
-    int countByExample(UmsRoleMenuRelationExample example);
+/**
+ * <p>
+ * 后台角色菜单关系表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface UmsRoleMenuRelationMapper extends BaseMapper<UmsRoleMenuRelation> {
 
-    int deleteByExample(UmsRoleMenuRelationExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(UmsRoleMenuRelation record);
-
-    int insertSelective(UmsRoleMenuRelation record);
-
-    List<UmsRoleMenuRelation> selectByExample(UmsRoleMenuRelationExample example);
-
-    UmsRoleMenuRelation selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") UmsRoleMenuRelation record, @Param("example") UmsRoleMenuRelationExample example);
-
-    int updateByExample(@Param("record") UmsRoleMenuRelation record, @Param("example") UmsRoleMenuRelationExample example);
-
-    int updateByPrimaryKeySelective(UmsRoleMenuRelation record);
-
-    int updateByPrimaryKey(UmsRoleMenuRelation record);
 }

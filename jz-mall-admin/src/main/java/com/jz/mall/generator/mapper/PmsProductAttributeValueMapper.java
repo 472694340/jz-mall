@@ -1,30 +1,16 @@
 package com.jz.mall.generator.mapper;
 
 import com.jz.mall.generator.model.PmsProductAttributeValue;
-import com.jz.mall.generator.model.PmsProductAttributeValueExample;
-import java.util.List;
-import org.apache.ibatis.annotations.Param;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
-public interface PmsProductAttributeValueMapper {
-    int countByExample(PmsProductAttributeValueExample example);
+/**
+ * <p>
+ * 存储产品参数信息的表 Mapper 接口
+ * </p>
+ *
+ * @author ShenLiang
+ * @since 2023-02-21
+ */
+public interface PmsProductAttributeValueMapper extends BaseMapper<PmsProductAttributeValue> {
 
-    int deleteByExample(PmsProductAttributeValueExample example);
-
-    int deleteByPrimaryKey(Long id);
-
-    int insert(PmsProductAttributeValue record);
-
-    int insertSelective(PmsProductAttributeValue record);
-
-    List<PmsProductAttributeValue> selectByExample(PmsProductAttributeValueExample example);
-
-    PmsProductAttributeValue selectByPrimaryKey(Long id);
-
-    int updateByExampleSelective(@Param("record") PmsProductAttributeValue record, @Param("example") PmsProductAttributeValueExample example);
-
-    int updateByExample(@Param("record") PmsProductAttributeValue record, @Param("example") PmsProductAttributeValueExample example);
-
-    int updateByPrimaryKeySelective(PmsProductAttributeValue record);
-
-    int updateByPrimaryKey(PmsProductAttributeValue record);
 }
