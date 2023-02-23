@@ -5,7 +5,8 @@ package com.jz.mall.generator.service;
  *  对象和数组都以json形式存储
  *
  *  接口的定义:提供方法供实现类去实现功能
- *  抽象类的方法是,提供模板方法,增加功能
+ *  抽象类的方法是,提供模板方法,继承模板功能方法(抽象类中里面可以有实现)
+ *
  */
 public interface RedisService {
 

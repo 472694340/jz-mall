@@ -44,4 +44,15 @@ public class UmsMemberController {
         return CommonResult.success(authCode);
     }
 
+    @ApiOperation("校验验证码")
+    @GetMapping("verify")
+    public CommonResult verify(@RequestParam(value = "authCode")String authCode,@RequestParam(value = "phoneNumber") String phoneNumber){
+        if (StringUtils.isEmpty(authCode)){
+            return CommonResult.failed("请输入验证码");
+        }
+       boolean isPass = memberService.verify(authCode,phoneNumber);
+       return isPass? CommonResult.success("验证成功"):CommonResult.failed("验证失败");
+    }
+
+
 }

@@ -14,4 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface UmsMemberService extends IService<UmsMember> {
 
     String authCode(String phoneNumber);
+
+    boolean verify(String authCode, String phoneNumber);
 }

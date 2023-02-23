@@ -6,6 +6,9 @@ import com.jz.mall.generator.mapper.UmsMemberMapper;
 import com.jz.mall.generator.service.RedisService;
 import com.jz.mall.generator.service.UmsMemberService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import freemarker.core.Environment;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -22,11 +25,12 @@ import java.util.Random;
  */
 @Service
 public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember> implements UmsMemberService {
+    private static final Logger log = LoggerFactory.getLogger(UmsMemberServiceImpl.class);
 
     @Value("${redis.key.prefix.authCode}")
     private String REDIS_KEY_PREFIX;
 
-    @Value("${redis.key.expire.authoCode}")
+    @Value("${redis.key.expire.authCodeExpire}")
     private String REDIS_KEY_EXPIRE;
 
     @Autowired
@@ -34,10 +38,13 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
 
     @Override
     public String authCode(String phoneNumber) {
-//        Props props = new Props("application.yml");
-//        String preAuthCode = props.getStr("authCode");
-//        String expireAuthCode = props.getStr("authCode");
+        //获取配置文件里的信息
 
+        Props props = new Props("application.yml");
+        String preAuthCode = props.getStr("authCode");
+        String expireAuthCode = props.getStr("authCodeExpire");
+        log.info("preAuthCode: " + preAuthCode);//"portal:authCode:"
+        log.info("expireAuthCode: " + expireAuthCode);//120
 
         //先生成六位数的随机数
         StringBuffer str = new StringBuffer();
@@ -48,5 +55,14 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
         redisService.set(REDIS_KEY_PREFIX + phoneNumber, String.valueOf(str));
         redisService.setExpire(REDIS_KEY_PREFIX + phoneNumber , Long.valueOf(REDIS_KEY_EXPIRE));
         return str.toString();
+    }
+
+    @Override
+    public boolean verify(String authCode, String phoneNumber) {
+        String redisCode = redisService.get(REDIS_KEY_PREFIX + phoneNumber);
+        if (authCode.equalsIgnoreCase(redisCode)){
+            return true;
+        }
+        return false;
     }
 }

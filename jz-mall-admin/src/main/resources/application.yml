@@ -16,7 +16,8 @@ redis:
     prefix:
       authCode: "portal:authCode:"
     expire:
-      authoCode: 120 #验证码过期时间
+      #验证码过期时间
+      authCodeExpire: 120
 
 #Redis配置
   redis:
