@@ -10,6 +10,11 @@ spring:
       password: 123456
       driver-class-name: com.mysql.jdbc.Driver
 
+  security:
+    user:
+      name: ShenLiang
+      password: 123456
+
 #Redis自定义key
 redis:
   key:
@@ -39,6 +44,10 @@ mybatis:
     - classpath:mapper/*.xml
     # 这里的classpath后面接着的是编译后的
     - classpath:com/**/mapper/*.xml
+
+jwt:
+  secret: ShenLiang
+  expire: 30*1000*60
 
 
 

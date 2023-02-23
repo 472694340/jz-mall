@@ -38,13 +38,12 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
 
     @Override
     public String authCode(String phoneNumber) {
-        //获取配置文件里的信息
-
-        Props props = new Props("application.yml");
-        String preAuthCode = props.getStr("authCode");
-        String expireAuthCode = props.getStr("authCodeExpire");
-        log.info("preAuthCode: " + preAuthCode);//"portal:authCode:"
-        log.info("expireAuthCode: " + expireAuthCode);//120
+        //获取配置文件里信息的另一种方式
+//        Props props = new Props("application.yml");
+//        String preAuthCode = props.getStr("authCode");
+//        String expireAuthCode = props.getStr("authCodeExpire");
+//        log.info("preAuthCode: " + preAuthCode);//"portal:authCode:"
+//        log.info("expireAuthCode: " + expireAuthCode);//120
 
         //先生成六位数的随机数
         StringBuffer str = new StringBuffer();
