@@ -2,6 +2,9 @@ package com.jz.mall.generator.service;
 
 import com.jz.mall.generator.model.UmsAdmin;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.jz.mall.generator.model.UmsPermission;
+
+import java.util.List;
 
 /**
  * <p>
@@ -13,4 +16,11 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface UmsAdminService extends IService<UmsAdmin> {
 
+    UmsAdmin getUserByName(String username);
+
+    List<UmsPermission> getPermissionList(Long adminId);
+
+    String login(String username, String password);
+
+    UmsAdmin register(UmsAdmin umsAdminParam);
 }

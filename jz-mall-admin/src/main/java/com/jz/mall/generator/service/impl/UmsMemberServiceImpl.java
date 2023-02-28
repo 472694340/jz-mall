@@ -36,6 +36,9 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
     @Autowired
     RedisServiceImpl redisService;
 
+    @Autowired
+    UmsMemberMapper umsMemberMapper;
+
     @Override
     public String authCode(String phoneNumber) {
         //获取配置文件里信息的另一种方式
@@ -64,4 +67,6 @@ public class UmsMemberServiceImpl extends ServiceImpl<UmsMemberMapper, UmsMember
         }
         return false;
     }
+
+
 }

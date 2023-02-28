@@ -16,4 +16,12 @@
         <result column="status" property="status" />
     </resultMap>
 
+    <select id="getPermissionList" resultType="com.jz.mall.generator.model.UmsPermission">
+        select up.* from ums_permission up
+        inner join ums_role_permission_relation urpr on urpr.permission_id=up.id
+        inner join ums_role ur on ur.id = urpr.role_id
+        inner join ums_admin_role_relation uarr on uarr.role_id = ur.id
+        left join ums_admin_permission_relation rapr on rapr.permission_id=up.id and rapr.type = 1
+        where uarr.admin_id=#{adminId}
+    </select>
 </mapper>

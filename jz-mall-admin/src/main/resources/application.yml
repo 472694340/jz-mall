@@ -1,5 +1,5 @@
 server:
-  port: 8082
+  port: 8083
 
 spring:
 #  数据源配置
@@ -47,7 +47,9 @@ mybatis:
 
 jwt:
   secret: ShenLiang
-  expire: 30*1000*60
+  expire: 604800
+  tokenHeader: chen
+  tokenHead: head
 
 
 
