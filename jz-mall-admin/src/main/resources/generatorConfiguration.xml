@@ -17,7 +17,7 @@
         <!-- 为生成的Java模型创建一个toString方法 -->
         <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
         <!-- 生成mapper.xml时覆盖原文件 -->
-        <!--<plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin" />-->
+        <!--<plugin type="org.mybatis.core.plugins.UnmergeableXmlMappersPlugin" />-->
 
         <!--type="com.macro.mall.CommentGenerator"-->
         <commentGenerator >
@@ -37,11 +37,11 @@
             <property name="nullCatalogMeansCurrent" value="true" />
         </jdbcConnection>
         <!-- 用于控制实体类的生成 -->
-        <javaModelGenerator targetPackage="com.jz.mall.generator.model" targetProject="jz-mall-admin\src\main\java"/>
+        <javaModelGenerator targetPackage="com.jz.mall.core.domain.model" targetProject="jz-mall-admin\src\main\java"/>
         <!-- 用于控制Mapper.xml文件的生成 -->
         <sqlMapGenerator targetPackage="mapper" targetProject="jz-mall-admin\src\main\resources"/>
         <!-- 用于控制Mapper接口的生成 -->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.jz.mall.generator.mapper"
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.jz.mall.core.mapper"
                              targetProject="jz-mall-admin\src\main\java"/>
         <!-- 配置需要生成的表，生成全部表tableName设为% -->
         <table tableName="%">

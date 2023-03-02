@@ -2,6 +2,8 @@ package com.jz.mall.filter;
 
 import com.jz.mall.utils.JwtUtil;
 import io.jsonwebtoken.Claims;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -16,6 +18,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * 这里是不是一定只能继承OncePerRequestFilter 这个抽象类
@@ -26,7 +30,7 @@ import java.io.IOException;
  *    3.失效了,重新登录,存入SpringSecurityContext中
  */
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
-
+private static final Logger log = LoggerFactory.getLogger(JwtAuthenticationTokenFilter.class);
     @Value("${jwt.tokenHeader}")
     private String tokenHeader;
 
@@ -41,13 +45,16 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
     @Override
     protected void doFilterInternal(HttpServletRequest req, HttpServletResponse res, FilterChain chain) throws ServletException, IOException {
+
         String authHeader = req.getHeader(this.tokenHeader); //
         if (authHeader !=null && authHeader.startsWith(this.tokenHead)){//说明有token,需要进一步验证
             //验证步骤:从header中取出token值,看信息和SpringSecurity中保存的用户信息是否一致
             String authToken = authHeader.substring(this.tokenHead.length());
             String userNameFormToken = jwtUtil.parseUserNameFormToken(authToken);
+            log.info("checking username:{}", userNameFormToken);
             //如果用户名不是空 并且权限为空,没验证过
             if (userNameFormToken != null && SecurityContextHolder.getContext().getAuthentication() == null){//如果从请求中的username不为空,且SpringSecurity里的用户信息为空,表示没有被验证过
+                log.info("authenticated user:{}", userNameFormToken);
                 UserDetails userDetails = this.userDetailsService.loadUserByUsername(userNameFormToken);//通过将用户名信息和权限信息 存入SpringSecurity
                 if (jwtUtil.verifyToken(authToken,userDetails)){
                     UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails,null,userDetails.getAuthorities());
@@ -55,12 +62,8 @@ public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
                     SecurityContextHolder.getContext().setAuthentication(authenticationToken);
                 }
             }
-
-        }else {
-            chain.doFilter(req,res);
         }
-
-
+            chain.doFilter(req,res);
 
     }
 }

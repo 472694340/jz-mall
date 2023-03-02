@@ -1,5 +1,7 @@
 package com.jz.mall.filter;
 
+import cn.hutool.json.JSONUtil;
+import com.jz.mall.common.CommonResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 
@@ -16,10 +18,10 @@ public class AccessDeniedHandlerFilter implements AccessDeniedHandler {
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException e) throws IOException, ServletException {
-        response.setContentType("application/json;utf-8");
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
         PrintWriter writer = response.getWriter();
-        //这个异常可以自定义
-        writer.write(e.getMessage());
+        writer.println(JSONUtil.parse(CommonResult.forbidden(e.getMessage())));
         writer.flush();
         writer.close();
     }

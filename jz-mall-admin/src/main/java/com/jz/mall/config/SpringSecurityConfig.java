@@ -1,17 +1,17 @@
 package com.jz.mall.config;
 
+import com.jz.mall.exception.annotationException.UsernamePasswordNotFoundException;
 import com.jz.mall.filter.AccessDeniedHandlerFilter;
 import com.jz.mall.filter.AuthenticationEntryPointFilter;
 import com.jz.mall.filter.JwtAuthenticationTokenFilter;
-import com.jz.mall.generator.dto.AdminUserDetails;
-import com.jz.mall.generator.model.UmsAdmin;
-import com.jz.mall.generator.model.UmsPermission;
-import com.jz.mall.generator.service.UmsAdminService;
+import com.jz.mall.core.domain.dto.AdminUserDetails;
+import com.jz.mall.core.domain.model.UmsAdmin;
+import com.jz.mall.core.domain.model.UmsPermission;
+import com.jz.mall.core.service.UmsAdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -19,14 +19,9 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.security.web.access.AccessDeniedHandlerImpl;
-import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import java.util.List;
@@ -54,7 +49,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/js/**", "/css/**","/images/**","/swagger-resources/**",
-                "/v2/api-docs/**");//ignoring()用来配置忽略掉的URL
+                "/v2/api-docs/**","/webjars/**");//ignoring()用来配置忽略掉的URL
     }
 
     /**
@@ -67,7 +62,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
         .authorizeRequests()//开启需要放行的接口配置
-                .antMatchers("/admin/login","/admin/register").permitAll()
+                .antMatchers("/admin/login","/admin/register","/swagger-ui.html").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .anyRequest().authenticated()//除去上面的放行,其他都需要进行验证
                 .and()
@@ -116,7 +111,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter  {
                 List<UmsPermission> permissions = umsAdminService.getPermissionList(umsAdmin.getId());
                 return new AdminUserDetails(umsAdmin,permissions);
             }
-                throw new UsernameNotFoundException("用户名/密码错误");
+                throw new UsernamePasswordNotFoundException();
         };
     }
 

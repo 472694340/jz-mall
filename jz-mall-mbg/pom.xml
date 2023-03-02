@@ -26,7 +26,7 @@
         <!--</dependency>-->
         <!--<dependency>-->
             <!--<groupId>com.baomidou</groupId>-->
-            <!--<artifactId>mybatis-plus-generator</artifactId>-->
+            <!--<artifactId>mybatis-plus-core</artifactId>-->
             <!--<version>3.5.2</version>-->
         <!--</dependency>-->
         <!--<dependency>-->

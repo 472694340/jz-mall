@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jz.mall.generator./jz-mall-admin.mapper.CmsHelpMapper">
+<mapper namespace="com.jz.mall.core./jz-mall-admin.mapper.CmsHelpMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.jz.mall.generator./jz-mall-admin.model.CmsHelp">
+    <resultMap id="BaseResultMap" type="com.jz.mall.core./jz-mall-admin.model.CmsHelp">
         <id column="id" property="id" />
         <result column="category_id" property="categoryId" />
         <result column="icon" property="icon" />

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jz.mall.generator.mapper.UmsRoleMapper">
+<mapper namespace="com.jz.mall.core.mapper.UmsRoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.jz.mall.generator.model.UmsRole">
+    <resultMap id="BaseResultMap" type="com.jz.mall.core.domain.model.UmsRole">
         <id column="id" property="id" />
         <result column="name" property="name" />
         <result column="description" property="description" />
@@ -13,4 +13,11 @@
         <result column="sort" property="sort" />
     </resultMap>
 
+    <select id="getMenusList" resultType="com.jz.mall.core.domain.model.UmsMenu">
+ 			select um.* from ums_role ur
+				left join ums_role_menu_relation rmr on rmr.role_id = ur.id
+				left join ums_admin_role_relation uar on uar.role_id = ur.id
+				left join ums_menu um on um.id = rmr.menu_id
+				where uar.admin_id=#{id} ORDER BY um.id
+    </select>
 </mapper>

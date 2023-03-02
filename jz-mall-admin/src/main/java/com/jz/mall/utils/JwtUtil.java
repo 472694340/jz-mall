@@ -73,9 +73,6 @@ public class JwtUtil {
      *
      */
     public String parseUserNameFormToken(String token){
-        if (token == null){
-            return "token 为空";
-        }
         Claims claims = getClaimsFromToken(token);
         String username = (String) claims.get(USERNAME);
         return username;//这里应该是取出用户名

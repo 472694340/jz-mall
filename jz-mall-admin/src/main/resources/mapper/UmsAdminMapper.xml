@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.jz.mall.generator.mapper.UmsAdminMapper">
+<mapper namespace="com.jz.mall.core.mapper.UmsAdminMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.jz.mall.generator.model.UmsAdmin">
+    <resultMap id="BaseResultMap" type="com.jz.mall.core.domain.model.UmsAdmin">
         <id column="id" property="id" />
         <result column="username" property="username" />
         <result column="password" property="password" />
@@ -16,12 +16,20 @@
         <result column="status" property="status" />
     </resultMap>
 
-    <select id="getPermissionList" resultType="com.jz.mall.generator.model.UmsPermission">
+    <select id="getPermissionList" resultType="com.jz.mall.core.domain.model.UmsPermission">
         select up.* from ums_permission up
         inner join ums_role_permission_relation urpr on urpr.permission_id=up.id
         inner join ums_role ur on ur.id = urpr.role_id
         inner join ums_admin_role_relation uarr on uarr.role_id = ur.id
         left join ums_admin_permission_relation rapr on rapr.permission_id=up.id and rapr.type = 1
         where uarr.admin_id=#{adminId}
+    </select>
+
+    <select id="getRoleList" resultType="com.jz.mall.core.domain.model.UmsRole">
+-- 需要注意的是 一对多,left 是将 left join 后面的表 取交集
+-- 这里 ums_role 和 ums_admin_role_relation 是 一对一的关系
+				select ur.* from ums_role ur
+			    join ums_admin_role_relation uarr on uarr.role_id=ur.id
+				where uarr.admin_id=#{id}
     </select>
 </mapper>

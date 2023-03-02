@@ -1,5 +1,8 @@
 server:
   port: 8083
+  servlet:
+    encoding:
+      charset: UTF-8
 
 spring:
 #  数据源配置
@@ -9,7 +12,6 @@ spring:
       username: root
       password: 123456
       driver-class-name: com.mysql.jdbc.Driver
-
   security:
     user:
       name: ShenLiang
@@ -38,7 +40,10 @@ redis:
           min-idle: 0 # 连接池中的最小空闲连接
       timeout: 3000ms #连接超时时间
 
-
+secure:
+  ignore:
+    urls: #配置白名单路径
+    - "/mall-admin/admin/info"
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
@@ -48,10 +53,12 @@ mybatis:
 jwt:
   secret: ShenLiang
   expire: 604800
-  tokenHeader: chen
-  tokenHead: head
+#  tokenHeader: chen #请求头中的参数名
+#  tokenHead: head  #
+  tokenHeader: Authorization
+  tokenHead: Bearer
 
 
 
 package:
-  base: com.jz.mall.generator
+  base: com.jz.mall.core
