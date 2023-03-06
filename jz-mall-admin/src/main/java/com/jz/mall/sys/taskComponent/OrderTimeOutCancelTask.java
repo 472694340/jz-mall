@@ -16,7 +16,6 @@ public class OrderTimeOutCancelTask {
     /**
      * 每十分钟扫描一次
      */
-    @Scheduled(cron = "0 0/10 * ? * ?")
 //    @Scheduled(cron = "0 0/10 * * ?")
     private void cancelTimeOutTask(){
         //这里执行取消订单操作

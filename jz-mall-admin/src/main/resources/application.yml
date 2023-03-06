@@ -12,21 +12,7 @@ spring:
       username: root
       password: 123456
       driver-class-name: com.mysql.jdbc.Driver
-  security:
-    user:
-      name: ShenLiang
-      password: 123456
-
-#Redis自定义key
-redis:
-  key:
-    prefix:
-      authCode: "portal:authCode:"
-    expire:
-      #验证码过期时间
-      authCodeExpire: 120
-
-#Redis配置
+  #pringBoot集成的Redis配置,被集成就是在spring的配置下
   redis:
     port: 6379
     database: 0
@@ -39,26 +25,54 @@ redis:
           max-idle: 8 # 连接池中的最大空闲连接
           min-idle: 0 # 连接池中的最小空闲连接
       timeout: 3000ms #连接超时时间
+  #将ElasticSearch分离成单独模块,配置在search模块中
+  #SpringBoot集成的ElasticSerach的配置信息,被集成包含 集群名字 / 连接地址 / 端口号
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true
+      cluster-nodes: 127.0.0.1:9300 #ElasticSearch的地址和端口号
+      cluster-name: elasticsearch #ElasticSearch集群名?
+#      client:
+#        reactive:
+#        endpoints: 127.0.0.1:9300 #ElasticSearch的地址和端口号?
+#        username: elasticsearch #ElasticSearch集群名?
+#Redis自定义key
+redis:
+  key:
+    prefix:
+      authCode: "portal:authCode:"
+    expire:
+      #验证码过期时间
+      authCodeExpire: 120
 
-secure:
-  ignore:
-    urls: #配置白名单路径
-    - "/mall-admin/admin/info"
+#mybatis / mybatisPlus 配置的映射文件信息
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
-    # 这里的classpath后面接着的是编译后的
+    # 这里的classpath后面接着的是编译后的,可以看class文件里的xml在哪儿
     - classpath:com/**/mapper/*.xml
 
+#生成JWT token需要的
 jwt:
   secret: ShenLiang
   expire: 604800
-#  tokenHeader: chen #请求头中的参数名
-#  tokenHead: head  #
-  tokenHeader: Authorization
-  tokenHead: Bearer
-
-
+  tokenHeader: Authorization #请求头中的参数名
+  tokenHead: Bearer #token 值前的参数
 
 package:
   base: com.jz.mall.core
+
+
+
+  #这里的配置是在不连接数据库情况下,内置的用户名和密码(可以替换掉SpringSecurity默认的用户名和密码)
+  #  security:
+  #    user:
+  #      name: ShenLiang
+  #      password: 123456
+
+
+#secure:
+#  ignore:
+#    urls: #配置白名单路径
+#    - "/mall-admin/admin/info"

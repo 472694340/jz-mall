@@ -20,7 +20,7 @@ public class MyBatisGeneratorConfig {
     public static void main(String[] args) throws IOException, XMLParserException, SQLException, InterruptedException, InvalidConfigurationException {
         //思路:读取配置文件,创建日志,是否覆盖原文件 ,创建执行器,执行
         InputStream is = MyBatisGenerator.class.getResourceAsStream("/generatorConfiguration.xml");
-        List<String> warnning = new ArrayList<>();
+        List<String> warnning = new ArrayList<String>();
         boolean overwrite = true;
 
         //配置解析器,指定日志输出

@@ -1,30 +1,41 @@
 package com.jz.mall.exception.base;
-
-
+import com.jz.mall.common.api.*;
 
 /**
- *  采用另外一种思想,直接在代码里
+ * 继承父类的方法,通过这个类,自定义抛出去的信息
+ *  还可以继承这个BaseException ,抛出其他自定义异常
  */
-public class BaseException extends RuntimeException{
+public class BaseException extends RuntimeException {
+    private ErrorCode errorCode;
 
-    private String message;//错误信息
 
-    private Integer code;//错误代码
 
-    public void setMessage(String message) {
-        this.message = message;
+    public ErrorCode getErrorCode() {
+        return errorCode;
     }
 
-    public void setCode(Integer code) {
-        this.code = code;
+
+    /**
+     * 将ErrorCode 里的属性注入到父类中
+     * @param errorCode
+     */
+    public BaseException(ErrorCode errorCode) {
+        super(errorCode.getMessage());
+        this.errorCode = errorCode;
     }
 
-    public BaseException() {
+    public BaseException(Throwable cause){
+        super(cause);
     }
 
-    public BaseException(String message, Integer code) {
-        this.message = message;
-        this.code = code;
+    public BaseException(String message){
+        super(message);
     }
+
+    public BaseException(String message,Throwable cause){
+        super(message,cause);
+    }
+
+
+
 }
-

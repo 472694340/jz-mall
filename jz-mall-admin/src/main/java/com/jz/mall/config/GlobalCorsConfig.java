@@ -22,7 +22,7 @@ public class GlobalCorsConfig{
     public CorsFilter corsFilter(){
         CorsConfiguration config = new CorsConfiguration();
         //允许所有域名进行跨域调用
-        config.addAllowedOriginPattern("*");
+        config.addAllowedOrigin("*");
         //允许跨越发送cookie
         config.setAllowCredentials(true);
         //放行全部原始头信息

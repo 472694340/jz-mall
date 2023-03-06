@@ -1,7 +1,7 @@
 package com.jz.mall;
 
 import cn.hutool.setting.dialect.Props;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class PropsDemo {
 

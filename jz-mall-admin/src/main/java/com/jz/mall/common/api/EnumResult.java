@@ -7,7 +7,8 @@ public enum EnumResult implements ErrorCode {
     SUCCESS("操作成功", HttpsStatus.HTTP_OK),
     FAIL("操作失败", HttpsStatus.HTTP_INTERNAL_ERROR),
     UNAUTHORIZED("未验证或token已过期", HttpsStatus.HTTP_UNAUTHORIZED),
-    FORBIDDEN("被禁止类型", HttpsStatus.HTTP_FORBIDDEN);
+    FORBIDDEN("被禁止类型", HttpsStatus.HTTP_FORBIDDEN),
+    VAILDATE_FAILED("参数验证失败",HttpsStatus.HTTP_NOT_FOUND);
     private String message;
     private Integer code;
 

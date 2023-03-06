@@ -31,11 +31,11 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())//注入相关API信息
                 .select()
                 //为当前包下controller生成API文档
-                .apis(RequestHandlerSelectors.basePackage("com.jz.mall.core.controller"))
+//                .apis(RequestHandlerSelectors.basePackage("com.jz.mall.core.controller"))
                 //为有@Api注解的Controller生成API文档
-//                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
+                .apis(RequestHandlerSelectors.withClassAnnotation(Api.class))
                 //为有@ApiOperation注解的方法生成API文档
-//                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
+                .apis(RequestHandlerSelectors.withMethodAnnotation(ApiOperation.class))
                 .paths(PathSelectors.any())
                 .build()
                 //添加登录认证
@@ -66,13 +66,13 @@ public class Swagger2Config {
 
     private List<ApiKey> securitySchemes() {
         //设置请求头信息
-        List<ApiKey> result = new ArrayList<>();
+        List<ApiKey> result = new ArrayList<ApiKey>();
         /*
          public ApiKey(String name, String keyname, String passAs) {
                 this(name, keyname, passAs, new ArrayList());
             }
          */
-        ApiKey apiKey = new ApiKey("Authorization", "chen", "header");
+        ApiKey apiKey = new ApiKey("Authorization", "Authorization", "header");
         result.add(apiKey);
         return result;
     }
@@ -80,7 +80,7 @@ public class Swagger2Config {
 
     private List<SecurityContext> securityContexts() {
         //设置需要登录认证的路径
-        List<SecurityContext> result = new ArrayList<>();
+        List<SecurityContext> result = new ArrayList();
         result.add(getContextByPath("/pmsBrand/.*"));
         return result;
     }
@@ -93,7 +93,7 @@ public class Swagger2Config {
     }
 
     private List<SecurityReference> defaultAuth() {
-        List<SecurityReference> result = new ArrayList<>();
+        List<SecurityReference> result = new ArrayList();
         AuthorizationScope authorizationScope = new AuthorizationScope("global", "accessEverything");
         AuthorizationScope[] authorizationScopes = new AuthorizationScope[1];
         authorizationScopes[0] = authorizationScope;

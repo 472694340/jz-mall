@@ -1,7 +1,9 @@
 package com.jz.mall.common;
 
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.Data;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -33,6 +35,16 @@ public class CommonPage<T> {
         result.setTotal(pageInfo.getTotal());
         result.setData(pageInfo.getList());
         return  result;
+    }
+
+    public static <T> CommonPage<T> restPage(Page<T> list) {
+        CommonPage<T> result = new CommonPage<>();
+        result.setPageNum(list.getNumber());
+        result.setPageSize(list.getSize());
+        result.setPages(list.getTotalPages());
+        result.setTotal(list.getTotalElements());
+        result.setData(list.getContent());
+        return result;
     }
 
 

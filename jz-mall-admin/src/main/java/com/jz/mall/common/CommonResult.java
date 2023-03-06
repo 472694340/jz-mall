@@ -61,6 +61,11 @@ public class CommonResult<T> {
         return new CommonResult<T>(EnumResult.FAIL.getMessage(),EnumResult.FAIL.getCode(),null);
     }
 
+    public static <T> CommonResult<T> validateFailed(String message){
+        return new CommonResult<>(message,EnumResult.VAILDATE_FAILED.getCode());
+    }
+
+
     public CommonResult() {
     }
 

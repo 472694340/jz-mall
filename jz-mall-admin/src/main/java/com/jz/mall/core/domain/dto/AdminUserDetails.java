@@ -26,7 +26,7 @@ public class AdminUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        List<SimpleGrantedAuthority> authorities = new ArrayList<>();
+        List<SimpleGrantedAuthority> authorities = new ArrayList<SimpleGrantedAuthority>();
         permissions.stream().filter(o->o.getValue()!=null)
                 .forEach(k->authorities.add(new SimpleGrantedAuthority(k.getValue())));
 //        for (UmsPermission permission : permissions) {
