@@ -1,5 +1,5 @@
 server:
-  port: 8083
+  port: 8081
   servlet:
     encoding:
       charset: UTF-8
@@ -37,6 +37,17 @@ spring:
 #        reactive:
 #        endpoints: 127.0.0.1:9300 #ElasticSearch的地址和端口号?
 #        username: elasticsearch #ElasticSearch集群名?
+
+#SpringData节点下的MongoDB
+    mongodb:
+#      uri: mongodb://localhost:27017/jz-mall  #要么不使用uri 通过database host port 要么就通过mongodb://username:password@localhost:27017/jz-mall的形式
+      host: localhost
+      port: 27017 #mongodb连接的端口号
+      database: jz-mall
+#      username:
+#      password:
+
+
 #Redis自定义key
 redis:
   key:
